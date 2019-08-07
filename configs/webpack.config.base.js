@@ -6,7 +6,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 export default {
-  entry: './src/index.js',
+  entry: './src/index.ts',
 
   output: {
     path: path.resolve(__dirname, '..', 'dist')
@@ -15,11 +15,14 @@ export default {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.ts$/,
+        enforce: 'pre',
+        loader: 'tslint-loader'
+      },
+      {
+        test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader'
-        }
+        loader: 'babel-loader'
       },
       {
         test: /\.html$/,
