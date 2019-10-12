@@ -6,7 +6,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 export default {
-  entry: './src/index.ts',
+  entry: './src/index.js',
 
   output: {
     path: path.resolve(__dirname, '..', 'dist')
