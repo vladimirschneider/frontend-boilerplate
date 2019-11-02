@@ -53,6 +53,7 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
+    "improve.css": "^1.0.0",
     "normalize.css": "^8.0.1"
   },
   "browserslist": [
