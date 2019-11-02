@@ -1,3 +1,5 @@
+// @flow
+
 'use strict';
 
 import 'normalize.css';
