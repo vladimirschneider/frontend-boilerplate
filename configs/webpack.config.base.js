@@ -72,10 +72,14 @@ export default {
   },
 
   plugins: [
-    new CopyWebpackPlugin([{
-      from: './public/assets',
-      to: './',
-    }]),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: './public/assets',
+          to: './'
+        }
+      ]
+    }),
 
     new MiniCssExtractPlugin({
       filename: 'css/style.css',
@@ -89,8 +93,6 @@ export default {
 
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'production'
-    }),
-
-    new webpack.NamedModulesPlugin()
+    })
   ]
 };

@@ -1,8 +1,8 @@
 import webpack from 'webpack';
-import merge from 'webpack-merge';
+import {merge} from 'webpack-merge';
 import baseConfig from './webpack.config.base';
 
-export default merge.smart(baseConfig, {
+export default merge(baseConfig, {
   devtool: 'cheap-module-source-map',
 
   mode: 'development',

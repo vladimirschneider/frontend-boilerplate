@@ -1,11 +1,11 @@
 import webpack from 'webpack';
-import merge from 'webpack-merge';
+import {merge } from 'webpack-merge';
 import baseConfig from './webpack.config.base';
 
-import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
+import TerserJsPlugin from 'terser-webpack-plugin';
 import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 
-export default merge.smart(baseConfig, {
+export default merge(baseConfig, {
   devtool: 'source-map',
 
   mode: 'production',
@@ -44,7 +44,7 @@ export default merge.smart(baseConfig, {
 
   optimization: {
     minimizer: [
-      new UglifyJsPlugin({
+      new TerserJsPlugin({
         cache: true,
         parallel: true,
         sourceMap: true,
